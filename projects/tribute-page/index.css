@@ -1,0 +1,90 @@
+/* document font */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+/* single quotation mark character style font(") */
+@import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,700&display=swap");
+/* font-family: 'Montagu Slab', serif; */
+
+/* joy of painting cursive font */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+/* font-family: 'Dancing Script', cursive; */
+
+@layer reset, base, layout, components, utilities;
+
+@layer reset {
+  :root {
+    --scroll-padding-block-start: 5rem;
+    --ff-sans: "Manrope", sans-serif;
+    --ff-serif: "Libre Bodoni", serif;
+    --ff-cursive: "Dancing Script", cursive;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+
+    scroll-behavior: smooth;
+    scroll-padding-block-start: var(--scroll-padding-block-start);
+  }
+
+  body {
+    font-family: var(--ff-sans);
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--ff-serif);
+  }
+
+  figure {
+    text-align: center;
+  }
+
+  blockquote {
+    position: relative;
+    quotes: initial;
+  }
+
+  blockquote::before,
+  blockquote::after {
+    position: absolute;
+  }
+
+  blockquote::before {
+    content: open-quote;
+    top: 0;
+    left: -1ch;
+  }
+  blockquote::after {
+    content: close-quote;
+    bottom: 0;
+    right: -1ch;
+  }
+}
+
+@layer utilities {
+  .font-cursive {
+    font-family: var(--ff-cursive);
+  }
+
+  .font-sans {
+    font-family: var(--ff-sans);
+  }
+
+  .wrapper {
+    --inline-padding: 2rem;
+    width: calc(100% - var(--inline-padding));
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+}
