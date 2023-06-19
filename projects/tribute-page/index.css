@@ -9,17 +9,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
 /* font-family: 'Dancing Script', cursive; */
 
-@layer reset, base, layout, components, utilities;
+@layer reset, base, layout, components, utilities, general;
 
 @layer reset {
   :root {
-    --scroll-padding-block-start: 5rem;
+    --max-width: 1200px;
+
+    --scroll-padding-block-start: 4.5rem;
     --ff-sans: "Manrope", sans-serif;
     --ff-serif: "Libre Bodoni", serif;
     --ff-cursive: "Dancing Script", cursive;
+    --ff-quote: "Montagu Slab", serif;
+
+    --neutral-100: hsl(0, 0%, 95%);
+    --neutral-900: hsl(0, 0%, 0%);
+
+    --text-neutral-100: var(--neutral-100);
+    --text-neutral-900: var(--neutral-900);
+
+    --xs: 0.5rem;
+    --sm: 0.75rem;
+    --base: 1rem;
+    --lg: 1.25rem;
+    --xl: 1.5rem;
+    --xl4: 2.5rem;
+    --xl9: clamp(4rem, 15vw, 12rem);
+
+    --text-xs: var(--xs);
+    --text-sm: var(--sm);
+    --text-base: var(--base);
+    --text-lg: var(--lg);
+    --text-xl: var(--xl);
+    --text-4xl: var(--xl4);
+    --text-9xl: var(--xl9);
+
+    --fw-100: 100;
+    --fw-200: 200;
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+    --fw-800: 800;
+    --fw-900: 900;
+
+    --font-thin: var(--fw-200);
+    --font-regular: var(--fw-400);
+    --font-bold: var(--fw-600);
   }
 
   * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
 
@@ -27,6 +68,10 @@
     display: block;
     width: 100%;
     max-width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
   }
 }
 
@@ -40,6 +85,7 @@
 
   body {
     font-family: var(--ff-sans);
+    color: var(--text-neutral-100);
   }
 
   :where(h1, h2, h3, h4, h5, h6) {
@@ -49,26 +95,217 @@
   figure {
     text-align: center;
   }
+}
 
-  blockquote {
-    position: relative;
-    quotes: initial;
+@layer layout {
+  body {
+    isolation: isolate;
   }
 
-  blockquote::before,
-  blockquote::after {
-    position: absolute;
+  main {
+    & section {
+      padding-block: 2em;
+    }
   }
 
-  blockquote::before {
-    content: open-quote;
+  header,
+  nav,
+  ul {
+    padding-block: 0.5em;
+
+    background-color: hsl(0, 0%, 0%, 0.6);
+  }
+
+  header {
+    position: sticky;
     top: 0;
-    left: -1ch;
+
+    & ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2em;
+
+      padding-inline: 0.5em;
+    }
+
+    z-index: 100;
   }
-  blockquote::after {
-    content: close-quote;
-    bottom: 0;
-    right: -1ch;
+
+  #hero {
+    display: grid;
+    place-items: center;
+
+    height: calc(100vh - 70px);
+    min-height: 500px;
+
+    text-align: center;
+
+    & h1 {
+      margin-block-end: 0.2em;
+    }
+
+    & blockquote {
+      max-width: 25ch;
+      margin-inline: auto;
+      margin-block-end: 1em;
+    }
+  }
+
+  #about {
+    container-type: inline-size;
+
+    & .wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, auto);
+      grid-template-areas:
+        "figure"
+        "paragraph"
+        "h2"
+        "anchor";
+      justify-items: center;
+      gap: 2em;
+
+      & figure {
+        grid-area: figure;
+      }
+
+      & p {
+        grid-area: paragraph;
+      }
+
+      & h2 {
+        grid-area: h2;
+      }
+
+      & a {
+        grid-area: anchor;
+      }
+    }
+    @container (width > 768px) {
+      & .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+          "figure paragraph"
+          "figure h2"
+          "figure anchor";
+
+        & p {
+          align-self: end;
+        }
+
+        & h2 {
+          align-self: center;
+        }
+
+        & a {
+          align-self: start;
+        }
+      }
+    }
+
+    & figure {
+      max-width: 500px;
+    }
+
+    & p {
+      text-indent: 3ch;
+    }
+  }
+
+  #artworks {
+    & h2 {
+      text-align: center;
+      margin-block-end: 0.5em;
+    }
+
+    & .carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: max(250px, 30%);
+      gap: 1em;
+
+      width: 100%;
+
+      overflow-x: scroll;
+      overscroll-behavior-inline: contain;
+
+      & figure {
+        max-width: 330px;
+
+        & img {
+          aspect-ratio: 1 / 0.75;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  #story {
+    --margin-auto-size: calc(12vw - 1.2rem);
+    --inline-position-offset: 40cqi;
+    container-type: inline-size;
+
+    & .wrapper * + * {
+      margin-block-start: 1em;
+    }
+    & article {
+      position: relative;
+
+      max-width: 500px;
+
+      isolation: isolate;
+
+      & img {
+        position: absolute;
+        inset-block: 0;
+
+        height: 100%;
+        width: 100%;
+        max-width: 270px;
+        object-fit: contain;
+
+        z-index: -1;
+      }
+      @container (width < 1300px) {
+        & img {
+          opacity: 0.25;
+        }
+      }
+    }
+    @container (width > 640px) {
+      & article {
+        margin-inline-end: var(--margin-auto-size);
+        margin-inline-start: auto;
+      }
+
+      & article:nth-of-type(odd) {
+        text-align: right;
+        margin-inline-end: auto;
+        margin-inline-start: var(--margin-auto-size);
+      }
+    }
+    & article:nth-child(odd):has(img) img {
+      right: var(--inline-position-offset);
+    }
+    & article:nth-child(even):has(img) img {
+      left: var(--inline-position-offset);
+    }
+  }
+}
+
+@layer components {
+  .button {
+    border: 1px solid VAR(--text-neutral-100);
+    padding: var(--xs) var(--sm);
+    text-decoration: none;
+    color: var(--text-neutral-100);
+  }
+  .button:hover {
+    filter: brightness(0.8);
   }
 }
 
@@ -81,10 +318,133 @@
     font-family: var(--ff-sans);
   }
 
+  .text-xs {
+    font-size: var(--text-xs);
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+  }
+  .text-base {
+    font-size: var(--text-base);
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+  }
+  .text-9xl {
+    font-size: var(--text-9xl);
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
   .wrapper {
     --inline-padding: 2rem;
-    width: calc(100% - var(--inline-padding));
-    max-width: 1200px;
+
+    width: calc(100% - (var(--inline-padding) * 2));
+    max-width: var(--max-width);
     margin-inline: auto;
+  }
+}
+
+@layer general {
+  body {
+    background-image: url("./assets/images/black-bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: hsl(0, 0%, 0%, 0.5);
+    background-blend-mode: overlay;
+  }
+
+  header {
+    & a {
+      color: var(--text-neutral-100);
+      text-decoration: none;
+    }
+    & a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  #hero {
+    position: relative;
+
+    isolation: isolate;
+
+    & blockquote {
+      position: relative;
+
+      isolation: isolate;
+    }
+    & blockquote::before {
+      content: '"';
+      position: absolute;
+      top: -100px;
+      left: -3%;
+
+      scale: -1.25;
+
+      font-family: var(--ff-quote);
+      font-size: 8rem;
+
+      opacity: 0.1;
+
+      z-index: -1;
+    }
+
+    & figcaption {
+      font-weight: var(--font-thin);
+    }
+  }
+  #hero::before {
+    content: "";
+    position: absolute;
+    inset: 1rem;
+
+    max-width: var(--max-width);
+    margin-inline: auto;
+
+    background-image: url("./assets/images/paintingRoss.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: hsl(0, 0%, 0%, 0.8);
+    background-blend-mode: overlay;
+
+    z-index: -1;
+  }
+
+  #about {
+    & figcaption {
+      opacity: 0.75;
+    }
+
+    & h2 {
+      font-size: 2.75rem;
+
+      & :where(.the, .joy-of-painting) {
+        display: inline-block;
+        rotate: -5deg;
+        font-weight: var(--fw-400);
+      }
+      & .the {
+        font-size: 1.5rem;
+        translate: 0px -1ch;
+      }
+      & .with-bob-ross {
+        display: block;
+        text-align: center;
+      }
+    }
   }
 }

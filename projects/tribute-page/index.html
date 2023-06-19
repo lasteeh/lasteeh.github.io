@@ -9,26 +9,25 @@
   </head>
   <body>
     <header>
-      <nav class="wrapper">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#artworks">Artworks</a></li>
-          <li><a href="#story">The Story</a></li>
+      <nav>
+        <ul class="uppercase">
+          <li><a class="text-sm" href="#about">About</a></li>
+          <li><a class="text-sm" href="#artworks">Artworks</a></li>
+          <li><a class="text-sm" href="#story">The Story</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <section class="hero">
+      <section id="hero">
         <div class="wrapper">
-          <h1>Bob Ross</h1>
+          <h1 class="text-9xl uppercase">Bob Ross</h1>
           <figure>
             <blockquote>
-              <p>
-                We don't make mistakes,<br />
-                we just have happy accidents.
-              </p>
+              <p>"We don't make mistakes, we just have happy accidents."</p>
             </blockquote>
-            <figcaption>-Bob Ross, <cite>The Joy of Painting</cite></figcaption>
+            <figcaption class="text-sm">
+              -Bob Ross, <cite>The Joy of Painting</cite>
+            </figcaption>
           </figure>
         </div>
       </section>
@@ -36,13 +35,16 @@
       <section id="about">
         <div class="wrapper">
           <h2>
-            <span class="font-cursive">the</span>
-            <span class="font-cursive">Joy of Painting</span><br />
-            <span class="font-sans">with Bob Ross</span>
+            <span class="the | font-cursive">the</span>
+            <span class="joy-of-painting | font-cursive">Joy of Painting</span
+            ><br />
+            <span class="with-bob-ross | font-sans text-sm">with Bob Ross</span>
           </h2>
           <figure>
-            <img src="" alt="Bob Ross" />
-            <figcaption>A fan painting of Bob Ross</figcaption>
+            <img src="./assets/images/bobRoss.png" alt="Bob Ross" />
+            <figcaption class="text-xs italic">
+              A fan painting of Bob Ross
+            </figcaption>
           </figure>
           <p>
             Bob Ross was an American painter, art instructor, and television
@@ -53,47 +55,89 @@
             known through his posthumous internet presence.
           </p>
 
-          <a href="https://www.bobross.com/about-bob-ross/"
-            >Discover Bob Ross</a
+          <a class="button" href="https://www.bobross.com/about-bob-ross/"
+            ><span>&#11169;</span> &nbsp; Discover Bob Ross</a
           >
         </div>
       </section>
 
       <section id="artworks">
         <div class="wrapper">
-          <h2>Artworks</h2>
-          <div>
+          <h2 class="text-4xl uppercase">Artworks</h2>
+          <div class="carousel">
             <figure>
-              <img src="" alt="" />
-              <figcaption>S1E1 A Walk in the Woods</figcaption>
+              <img
+                src="./assets/images/s1e1.webp"
+                alt="A Walk in the Woods painting"
+              />
+              <figcaption>
+                <h3>A Walk in the Woods</h3>
+                <p>S1E1</p>
+              </figcaption>
             </figure>
             <figure>
-              <img src="" alt="" />
-              <figcaption>S1E2 Mt. McKinley</figcaption>
+              <img
+                src="./assets/images/s1e2.webp"
+                alt="Mt. McKinley painting"
+              />
+              <figcaption>
+                <h3>Mt. McKinley</h3>
+                <p>S1E2</p>
+              </figcaption>
             </figure>
             <figure>
-              <img src="" alt="" />
-              <figcaption>S1E2 Mt. McKinley</figcaption>
+              <img
+                src="./assets/images/s1e3.webp"
+                alt="Ebony Sunset painting"
+              />
+              <figcaption>
+                <h3>Ebony Sunset</h3>
+                <p>S1E3</p>
+              </figcaption>
             </figure>
             <figure>
-              <img src="" alt="" />
-              <figcaption>S1E2 Mt. McKinley</figcaption>
+              <img src="./assets/images/s1e4.webp" alt="Winter Mist painting" />
+              <figcaption>
+                <h3>Winter Mist</h3>
+                <p>S1E4</p>
+              </figcaption>
             </figure>
             <figure>
-              <img src="" alt="" />
-              <figcaption>S1E2 Mt. McKinley</figcaption>
+              <img
+                src="./assets/images/s1e5.webp"
+                alt="Quiet Stream painting"
+              />
+              <figcaption>
+                <h3>Quiet Stream</h3>
+                <p>S1E5</p>
+              </figcaption>
             </figure>
             <figure>
-              <img src="" alt="" />
-              <figcaption>S1E2 Mt. McKinley</figcaption>
+              <img src="./assets/images/s1e6.webp" alt="Winter Moon painting" />
+              <figcaption>
+                <h3>Winter Moon</h3>
+                <p>S1E6</p>
+              </figcaption>
             </figure>
             <figure>
-              <img src="" alt="" />
-              <figcaption>S1E2 Mt. McKinley</figcaption>
+              <img
+                src="./assets/images/s1e7.webp"
+                alt="Autumn Mountain painting"
+              />
+              <figcaption>
+                <h3>Autumn Mountain</h3>
+                <p>S1E7</p>
+              </figcaption>
             </figure>
             <figure>
-              <img src="" alt="" />
-              <figcaption>S1E2 Mt. McKinley</figcaption>
+              <img
+                src="./assets/images/s1e8.webp"
+                alt="Peaceful Valley painting"
+              />
+              <figcaption>
+                <h3>Peaceful Valley</h3>
+                <p>S1E8</p>
+              </figcaption>
             </figure>
           </div>
         </div>
@@ -103,7 +147,6 @@
         <div class="wrapper">
           <h2>The Bob Ross Story</h2>
           <article>
-            <img src="" alt="" />
             <h3>Early On</h3>
             <p>
               Robert Norman Ross was born in Daytona, Florida, on October 29,
@@ -115,7 +158,10 @@
             </p>
           </article>
           <article>
-            <img src="" alt="" />
+            <img
+              src="./assets/images/youngBobRoss.webp"
+              alt="A young Bob Ross"
+            />
             <h3>Learning to Paint</h3>
             <p>
               Bob Ross had his first stationed in Florida before being
@@ -147,7 +193,10 @@
             </p>
           </article>
           <article>
-            <img src="" alt="" />
+            <img
+              src="./assets/images/bobRossJoyOfPainting.webp"
+              alt="Bob Ross on The Joy of Painting"
+            />
             <h3>Teaching Others to Paint</h3>
             <p>
               Bob's passion for painting and his desire to share it with others
@@ -173,7 +222,10 @@
             </p>
           </article>
           <article>
-            <img src="" alt="" />
+            <img
+              src="./assets/images/deadpoolRoss.webp"
+              alt="Deadpool dressed as Bob Ross as a parody of The Joy of Painting"
+            />
             <h3>A Media Darling</h3>
             <p>
               Although he might seem shy and retiring Bob was a savvy media
@@ -185,7 +237,6 @@
             </p>
           </article>
           <article>
-            <img src="" alt="" />
             <h3>Something For Everyone</h3>
             <p>
               Dedicated fans include Baby Boomers, Millennials, and Generation
@@ -201,7 +252,10 @@
             </p>
           </article>
           <article>
-            <img src="" alt="" />
+            <img
+              src="./assets/images/dollRoss.webp"
+              alt="A Bob Ross stuffed toy"
+            />
             <h3>And The Beat Goes On</h3>
             <p>
               Bob Ross's influence remains prevalent in today's digital
