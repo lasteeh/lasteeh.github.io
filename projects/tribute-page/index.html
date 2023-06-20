@@ -18,6 +18,7 @@
         </ul>
       </nav>
     </header>
+
     <main>
       <section id="hero">
         <div class="wrapper">
@@ -56,7 +57,7 @@
           </p>
 
           <a
-            class="button"
+            class="button | text-center"
             target="_blank"
             href="https://www.bobross.com/about-bob-ross/"
             ><span>&#11169;</span> &nbsp; Discover Bob Ross</a
@@ -66,7 +67,7 @@
 
       <section id="artworks">
         <div class="wrapper">
-          <h2 class="text-4xl uppercase text-center">Artworks</h2>
+          <h2 class="uppercase text-center">Artworks</h2>
           <div class="carousel">
             <figure>
               <img
@@ -148,7 +149,7 @@
 
       <section id="story">
         <div class="wrapper">
-          <h2 class="text-4xl uppercase text-center">The Bob Ross Story</h2>
+          <h2 class="uppercase text-center">The Bob Ross Story</h2>
           <article>
             <h3>Early On</h3>
             <p>
@@ -293,18 +294,57 @@
           </article>
         </div>
       </section>
+    </main>
 
-      <footer>
-        <div class="wrapper">
-          <p>
-            design by<br />
-            <span class="font-serif uppercase text-2xl">Last</span>
-          </p>
-          <p class="text-sm">
-            Non-commercial project. All pictures belong to their authors.
+    <footer>
+      <div class="wrapper">
+        <p>
+          design by<br />
+          <span class="font-serif uppercase text-2xl">Last</span>
+        </p>
+        <p class="text-sm">
+          Non-commercial project. All pictures belong to their authors.
+        </p>
+      </div>
+    </footer>
+
+    <aside>
+      <div id="bob-survey">
+        <input type="checkbox" id="popup-form-toggle" />
+        <label for="popup-form-toggle"
+          ><img src="./assets/images/chibiRoss.webp" alt="Open Pop-Up Form"
+        /></label>
+        <div class="speech-bubble">
+          <form action="">
+            <h1 class="text-center">Be a Painter</h1>
+            <p class="text-center text-xs">(non-functional)</p>
+            <p class="text-center text-base">Enroll today!</p>
+            <label
+              >Name
+              <input type="text" />
+            </label>
+            <label
+              >Email
+              <input type="email" />
+            </label>
+            <label
+              >Choose when you'll learn
+              <select>
+                <option value="full time">Full-Time</option>
+                <option value="part time">Part-Time</option>
+              </select>
+            </label>
+
+            <button class="button" type="submit">
+              <span>&#11169;</span> &nbsp; Apply Now
+            </button>
+          </form>
+          <p class="text-center font-serif">
+            click me<span class="wiggler">!</span>
           </p>
         </div>
-      </footer>
-    </main>
+        <div class="speech-tail"></div>
+      </div>
+    </aside>
   </body>
 </html>
