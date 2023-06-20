@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bob Ross - A Tribute</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
@@ -20,7 +21,7 @@
     <main>
       <section id="hero">
         <div class="wrapper">
-          <h1 class="text-9xl uppercase">Bob Ross</h1>
+          <h1 class="text-9xl uppercase text-center">Bob Ross</h1>
           <figure>
             <blockquote>
               <p>"We don't make mistakes, we just have happy accidents."</p>
@@ -65,7 +66,7 @@
 
       <section id="artworks">
         <div class="wrapper">
-          <h2 class="text-4xl uppercase">Artworks</h2>
+          <h2 class="text-4xl uppercase text-center">Artworks</h2>
           <div class="carousel">
             <figure>
               <img
@@ -147,7 +148,7 @@
 
       <section id="story">
         <div class="wrapper">
-          <h2>The Bob Ross Story</h2>
+          <h2 class="text-4xl uppercase text-center">The Bob Ross Story</h2>
           <article>
             <h3>Early On</h3>
             <p>
@@ -255,6 +256,7 @@
           </article>
           <article>
             <img
+              class="no-frame"
               src="./assets/images/dollRoss.webp"
               alt="A Bob Ross stuffed toy"
             />
@@ -296,9 +298,11 @@
         <div class="wrapper">
           <p>
             design by<br />
-            <span>Last</span>
+            <span class="font-serif uppercase text-2xl">Last</span>
           </p>
-          <p>Non-commercial project. All pictures belong to their authors.</p>
+          <p class="text-sm">
+            Non-commercial project. All pictures belong to their authors.
+          </p>
         </div>
       </footer>
     </main>
