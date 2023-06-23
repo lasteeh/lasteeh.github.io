@@ -606,21 +606,27 @@
       font-weight: var(--font-thin);
     }
   }
-  #hero::before {
-    content: "";
-    position: absolute;
-    inset: 1rem;
+  #hero {
+    & .bg {
+      position: absolute;
+      inset: 1rem;
 
-    max-width: var(--max-width);
-    margin-inline: auto;
+      max-width: var(--max-width);
+      margin-inline: auto;
 
-    background-image: url("./assets/images/paintingRoss.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: hsl(0, 0%, 0%, 0.8);
-    background-blend-mode: overlay;
+      background-color: hsl(0, 0%, 0%, 0.8);
+      background-blend-mode: overlay;
 
-    z-index: -1;
+      z-index: -1;
+
+      & video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        opacity: 0.2;
+      }
+    }
   }
 
   #about {
