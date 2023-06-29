@@ -1,0 +1,47 @@
+@layer reset, base, layout, components, utilities, general;
+
+@layer reset {
+  :root {
+    --scroll-padding-block-start: 150px;
+
+    --neutral-100: hsl(0, 0%, 95%);
+    --neutral-900: hsl(0, 0%, 0%);
+
+    --text-neutral-100: var(--neutral-100);
+    --text-neutral-900: var(--neutral-900);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+
+    scroll-behavior: smooth;
+    scroll-padding-block-start: var(--scroll-padding-block-start);
+  }
+}
+
+@layer {
+  .wrapper {
+    --max-width: 1200px;
+    --inline-padding: 2rem;
+
+    width: calc(100% - (var(--inline-padding) * 2));
+    max-width: var(--max-width);
+    margin-inline: auto;
+  }
+}

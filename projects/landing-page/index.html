@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guild Wars 2 Mounts - A New Way To Explore</title>
+    <link rel="stylesheet" href="styles.css" />
     <script
       type="text/javascript"
       src="https://kit.fontawesome.com/02bc210be2.js?ver=1.0.1654553106"
@@ -24,7 +25,7 @@
         </button>
         <nav id="primary-navigation">
           <ul role="list" aria-label="Primary">
-            <li><a href="#">Mounts</a></li>
+            <li><a href="#mounts">Mounts</a></li>
             <li><a href="#">Purchase</a></li>
             <li><a href="#">Gallery</a></li>
           </ul>
@@ -46,9 +47,7 @@
 
       <section id="about">
         <div class="wrapper">
-          <button>
-            <img src="" alt="Mount Video Screenshot" />
-          </button>
+          <h2>About</h2>
           <div>
             <p>
               Introducing mounts, a brand-new feature in Guild Wars 2: Path of
@@ -58,10 +57,244 @@
             </p>
             <a href="">Find out more.</a>
           </div>
+          <button>
+            <img src="" alt="Mount Video Screenshot" />
+          </button>
+        </div>
+      </section>
+
+      <section id="mounts">
+        <div class="wrapper">
+          <h2>The Mounts</h2>
+          <ul>
+            <li>
+              <h3>The Raptor</h3>
+              <p>
+                Raptors are hardy and swift, and surprisingly easy to train due
+                to their intelligence. They can cross great distances in a
+                single leap, making them the favored mount of many of the
+                desert's denizens. Travelers are advised not to leave the city
+                of Amnoon without obtaining a raptor companion.
+              </p>
+            </li>
+
+            <li>
+              <h3>The Springer</h3>
+              <p>
+                Their long ears and wiggly noses are charming, but the
+                springer's greatest strength is their ability to make
+                jaw-dropping vertical leaps. Traveling merchants and couriers
+                use them to cross sheer cliffs in the Crystal Highlands, shaving
+                weeks off their journeys.
+              </p>
+            </li>
+            <li>
+              <h3>The Skimmer</h3>
+              <p>
+                Skimmers are graceful creatures native to the Elon River. They
+                live above water, breathing through large air sacs as they float
+                above the surface. While they cannot truly fly, they can hover
+                for short distances at a height of several norn, making them
+                indispensable for crossing large areas of treacherous quicksand
+                or sulfur.
+              </p>
+            </li>
+            <li>
+              <h3>The Jackal</h3>
+              <p>
+                Jackals are elusive, magical creatures formed of shifting sands
+                and given shape by magical runes. They can dissipate into sand
+                to teleport short distances and dash through sand portals. The
+                djinn of the Desolation create and tame them; prove yourself a
+                worthy trainer, and you may befriend one.
+              </p>
+            </li>
+            <li>
+              <h3>The Griffon</h3>
+              <p>
+                Despite weighing as much as a dolyak, the elusive giant griffon
+                can glide at high altitudes and even take off breifly from the
+                ground. The Mordant Crescent is acting to suppress recent rumors
+                of griffon riders in the desert skies, and you have quite a
+                journey ahead if you'd like one for yourself.
+              </p>
+            </li>
+            <li>
+              <h3>The Roller Beetle</h3>
+              <p>
+                Roller beetles can cross vast stretches of sand dunes i the
+                blink of an eye by curling into a ball to gather momentum.
+                Controlling beetles gracefully at top speed requires skill and
+                finess, encouraging their fans to form competitive racing
+                networks across Tyria.
+              </p>
+            </li>
+            <li>
+              <h3>The Warclaw</h3>
+              <p>
+                Discovered by Durmand Priory scholars, warclaws are magical
+                constructs bound to armor of uncertain origin. Assembling the
+                armore will manifest a fierce and loyal mount to ride in the
+                Mists—but you'll need to join the Mist War to find it.
+              </p>
+              <p>Bond with your Warckaw in the World vs. World.</p>
+            </li>
+            <li>
+              <h3>The Skyscale</h3>
+              <p>
+                Skyscales are a new and mysterious draconic life form. They use
+                their powerful wings to lift into the air from the ground and
+                maintain altitude and can cling to walls to regain their
+                strength. With a skyscale companion, you'll reach heights you've
+                only dreamed of.
+              </p>
+            </li>
+            <li>
+              <h3>The Siege Turtle</h3>
+              <p>
+                Siege Turtle can bear two riders: one to handle the turtle. and
+                another to operate the weapons strapped to its shell. Raise your
+                own walking war machine and take a friend out for combat
+                adventures!
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="cta">
+        <div class="wrapper">
+          <h2>Purchase</h2>
+          <form action="" id="purchase-mount-form">
+            <fieldset>
+              <legend>Choose one:</legend>
+              <label
+                ><input
+                  type="radio"
+                  name="mount"
+                  data-cost="4999999"
+                  value="mount-bundle"
+                /><span>Mount Bundle</span></label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="mount"
+                  data-cost="19999"
+                  value="raptor"
+                /><span>Raptor</span></label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="mount"
+                  data-cost="19999"
+                  value="springer"
+                />
+                <span>Springer</span></label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="mount"
+                  data-cost="49999"
+                  value="skimmer"
+                />
+                <span>Skimmer</span></label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="mount"
+                  data-cost="304000"
+                  value="jackal"
+                />
+                <span>Jackal</span></label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="mount"
+                  data-cost="22499999"
+                  value="griffon"
+                />
+                <span>Griffon</span></label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="mount"
+                  data-cost="99999"
+                  value="roller-beetle"
+                />
+                <span>Roller Beetle</span></label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="mount"
+                  data-cost="79999"
+                  value="warclaw"
+                />
+                <span>Warclaw</span></label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="mount"
+                  data-cost="1490000"
+                  value="skyscale"
+                />
+                <span>Skyscale</span></label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="mount"
+                  data-cost="1094500"
+                  value="siege-turtle"
+                />
+                <span>Siege Turtle</span></label
+              >
+            </fieldset>
+          </form>
+          <div>
+            <h3>Mount Bundle</h3>
+            <p><span>499</span><span>99</span><span>99</span></p>
+            <p>
+              Unlock and train your new companions using the max-level Mastery
+              character progression system, and explore freely by leaping across
+              canyons, bounding up high cliffs, and skimming over quicksand.
+            </p>
+            <button type="submit" form="purchase-mount-form">Purchase</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="wrapper">
+          <h2>Gallery</h2>
+          <div>
+            <img src="" alt="A player riding a skimmer on water" />
+            <img src="" alt="A player on an idle roller beetle" />
+            <img
+              src=""
+              alt="A raptor with a player riding on it's back looking to the right"
+            />
+            <img
+              src=""
+              alt="A springer munching its hands while the player rides on its back"
+            />
+            <img
+              src=""
+              alt="A differently skinned raptor with a player riding it"
+            />
+            <img src="" alt="A generic skinned griffon" />
+          </div>
         </div>
       </section>
     </main>
-    <footer>
+    <footer id="main-footer">
       <div class="wrapper">
         <p>
           design by <br />
