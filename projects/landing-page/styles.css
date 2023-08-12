@@ -35,7 +35,7 @@
   }
 }
 
-@layer {
+@layer utilities {
   .wrapper {
     --max-width: 1200px;
     --inline-padding: 2rem;
